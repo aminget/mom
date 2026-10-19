@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جمهورية السودان - وزارة المعادن السودانية | البوابة الموحدة</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Cairo Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        maroon: {
+                            DEFAULT: '#5A1827',
+                            dark: '#4A101D',
+                            light: '#7A2235',
+                            soft: '#fbf4f5'
+                        },
+                        gold: {
+                            DEFAULT: '#D4AF37',
+                            light: '#F3E5AB',
+                            dark: '#B08D23',
+                            accent: '#FFD700'
+                        }
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f8f9fa;
+            background-image: radial-gradient(#d4af3720 1px, transparent 1px);
+            background-size: 28px 28px;
+        }
+
+        /* Glassmorphism Effect */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+        }
+
+        /* Custom Hover Animations */
+        .portal-card {
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .portal-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 35px -10px rgba(90, 24, 39, 0.2), 0 10px 20px -5px rgba(212, 175, 55, 0.3);
+        }
+
+        .portal-card:hover .icon-box {
+            transform: scale(1.1) rotate(3deg);
+            background-color: #5A1827;
+            color: #FFD700;
+        }
+
+        /* Maroon Gradient Background */
+        .bg-maroon-gradient {
+            background: linear-gradient(135deg, #3D101A 0%, #5A1827 50%, #7A2235 100%);
+        }
+
+        /* Ticker Animation */
+        @keyframes ticker {
+            0% { transform: translate3d(100%, 0, 0); }
+            100% { transform: translate3d(-100%, 0, 0); }
+        }
+        .ticker-wrap {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .ticker-move {
+            display: inline-block;
+            animation: ticker 25s linear infinite;
+        }
+        .ticker-wrap:hover .ticker-move {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between text-gray-800">
+
+    <!-- Top Announcement & Date Bar -->
+    <div class="bg-maroon-dark text-gold-light text-xs sm:text-sm py-2 px-4 border-b-2 border-gold shadow-md">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-2 space-x-reverse font-semibold">
+                <span class="bg-gold text-maroon-dark px-2.5 py-0.5 rounded-full text-xs font-black animate-pulse">رسمي</span>
+                <span>البوابة الإلكترونية الموحدة - وزارة المعادن السودانية</span>
+            </div>
+            <div class="flex items-center space-x-4 space-x-reverse text-xs opacity-95">
+                <span id="current-date"><i class="far fa-calendar-alt ml-1 text-gold"></i> جاري التحميل...</span>
+                <span class="hidden sm:inline">|</span>
+                <span class="hidden sm:inline"><i class="fas fa-shield-alt ml-1 text-gold"></i> اتصال حكومي آمن</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header / Hero Section -->
+    <header class="bg-maroon-gradient text-white shadow-2xl relative overflow-hidden">
+        <!-- Background Pattern Overlay -->
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 py-8 sm:py-10 relative z-10">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-right">
+                
+                <!-- Logo & Title Section -->
+                <div class="flex flex-col sm:flex-row items-center gap-6">
+                    
+                    <!-- Single Emblem: Official Ministry of Minerals Emblem -->
+                    <div class="w-28 h-28 sm:w-32 sm:h-32 bg-white rounded-full p-2 border-4 border-gold shadow-2xl flex items-center justify-center hover:scale-105 transition-transform duration-300 shrink-0">
+                        <img src="images.png" alt="شعار وزارة المعادن السودانية" class="w-full h-full object-contain drop-shadow-md">
+                    </div>
+
+                    <!-- Titles Text -->
+                    <div class="text-center sm:text-right my-2 sm:my-0">
+                        <span class="block text-gold-light text-sm sm:text-base font-bold tracking-wider uppercase mb-1">جمهورية السودان</span>
+                        <h1 class="text-3xl sm:text-4xl font-black text-white leading-tight drop-shadow-md">
+                            وزارة المعادن السودانية
+                        </h1>
+                        <span class="text-xs sm:text-sm text-gray-200 font-light">Republic of the Sudan - Ministry of Minerals</span>
+                    </div>
+
+                </div>
+
+                <!-- Right Side: Badge & Quick Info -->
+                <div class="flex flex-col items-center md:items-end gap-2">
+                    <span class="inline-flex items-center gap-2 bg-gold/20 text-gold-light border border-gold/50 px-4 py-2 rounded-full font-bold text-xs sm:text-sm shadow-inner">
+                        <span class="w-2.5 h-2.5 rounded-full bg-gold animate-ping"></span>
+                        البوابة الرقمية الموحدة
+                    </span>
+                    <span class="text-xs text-gray-300 font-light hidden lg:inline">إدارة قطاع التعدين والتحول الرقمي</span>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Decorative Bottom Border -->
+        <div class="h-2 bg-gradient-to-r from-gold-dark via-gold-accent to-gold-dark"></div>
+    </header>
+
+    <!-- News Ticker Bar -->
+    <section class="bg-white border-b border-gray-200 py-2.5 px-4 shadow-sm">
+        <div class="max-w-7xl mx-auto flex items-center">
+            <div class="flex items-center text-maroon font-bold text-xs sm:text-sm whitespace-nowrap pl-4 border-l-2 border-gold">
+                <i class="fas fa-bullhorn text-gold ml-2 text-base"></i> الأخبار والمستجدات:
+            </div>
+            <div class="ticker-wrap w-full text-xs sm:text-sm text-gray-700">
+                <div class="ticker-move space-x-8 space-x-reverse">
+                    <span>أهلاً بكم في البوابة الإلكترونية الرسمية لوزارة المعادن السودانية</span>
+                    <span class="text-gold-dark font-bold">•</span>
+                    <span>تابعوا تحديثات مؤشرات أسعار الذهب اليومية المعتمدة في السوق المحلي والعالمي</span>
+                    <span class="text-gold-dark font-bold">•</span>
+                    <span>نظام اللجنة الفنية يقدم خيارات متابعة المعاملات والتراخيص الرقمية بسهولة</span>
+                    <span class="text-gold-dark font-bold">•</span>
+                    <span>استعراض تحليلات إنتاج القطاع من خلال منصة التقارير الذكية (BI)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Portal Cards Section -->
+    <main class="max-w-7xl mx-auto px-4 py-12 sm:py-16 flex-grow w-full">
+        
+        <!-- Section Title -->
+        <div class="text-center mb-12">
+            <span class="inline-block bg-maroon-soft text-maroon text-xs font-bold px-4 py-1.5 rounded-full border border-maroon/20 mb-3 shadow-sm">
+                الأنظمة والخدمات الرقمية
+            </span>
+            <h2 class="text-2xl sm:text-3xl font-black text-maroon-dark">
+                البوابة الموحدة للوصول السريع
+            </h2>
+            <div class="w-20 h-1 bg-gold mx-auto mt-3 rounded-full"></div>
+            <p class="text-gray-600 text-xs sm:text-sm mt-3 max-w-xl mx-auto leading-relaxed">
+                اختر المنصة المطلوبة للانتقال المباشر والآمن إلى الخدمة الإلكترونية
+            </p>
+        </div>
+
+        <!-- Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+
+            <!-- Card 1: Gold Prices -->
+            <a href="https://momglob.com:8001/" target="_blank" rel="noopener noreferrer" class="group">
+                <div class="portal-card glass-card rounded-2xl p-8 h-full flex flex-col justify-between border-t-4 border-t-gold shadow-md relative overflow-hidden">
+                    <div class="absolute -top-10 -left-10 w-24 h-24 bg-gold/10 rounded-full group-hover:scale-150 transition-transform duration-500"></div>
+
+                    <div>
+                        <!-- Icon -->
+                        <div class="icon-box w-16 h-16 rounded-2xl bg-gold/15 text-maroon flex items-center justify-center text-3xl mb-6 shadow-sm transition-all duration-300">
+                            <i class="fas fa-coins"></i>
+                        </div>
+
+                        <!-- Card Header -->
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-xl font-bold text-maroon-dark group-hover:text-maroon transition-colors">
+                                أسعار الذهب
+                            </h3>
+                            <span class="text-[11px] bg-amber-100 text-amber-900 font-bold px-2.5 py-1 rounded-full border border-amber-300">
+                                بث مباشر
+                            </span>
+                        </div>
+
+                        <!-- Description -->
+                        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-6">
+                            متابعة وتحديثات أسعار الذهب اليومية والمؤشرات الاقتصادية المحلية والعالمية مع التحليلات المعتمدة.
+                        </p>
+                    </div>
+
+                    <!-- Footer Link -->
+                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs sm:text-sm font-bold text-maroon group-hover:text-gold-dark transition-colors">
+                        <span>الدخول للخدمة</span>
+                        <i class="fas fa-arrow-left transform group-hover:-translate-x-2 transition-transform"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Card 2: Technical Committee System -->
+            <a href="http://techcommittee.momglob.com/app/admin/" target="_blank" rel="noopener noreferrer" class="group">
+                <div class="portal-card glass-card rounded-2xl p-8 h-full flex flex-col justify-between border-t-4 border-t-maroon shadow-md relative overflow-hidden">
+                    <div class="absolute -top-10 -left-10 w-24 h-24 bg-maroon/10 rounded-full group-hover:scale-150 transition-transform duration-500"></div>
+
+                    <div>
+                        <!-- Icon -->
+                        <div class="icon-box w-16 h-16 rounded-2xl bg-maroon/10 text-maroon flex items-center justify-center text-3xl mb-6 shadow-sm transition-all duration-300">
+                            <i class="fas fa-gavel"></i>
+                        </div>
+
+                        <!-- Card Header -->
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-xl font-bold text-maroon-dark group-hover:text-maroon transition-colors">
+                                نظام اللجنة الفنية
+                            </h3>
+                            <span class="text-[11px] bg-red-100 text-maroon-dark font-bold px-2.5 py-1 rounded-full border border-red-200">
+                                نظام إداري
+                            </span>
+                        </div>
+
+                        <!-- Description -->
+                        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-6">
+                            بوابة إلكترونية لإدارة ومتابعة طلبات ومعاملات اللجنة الفنية للتعدين، التوصيات، والتحكم الإداري.
+                        </p>
+                    </div>
+
+                    <!-- Footer Link -->
+                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs sm:text-sm font-bold text-maroon group-hover:text-gold-dark transition-colors">
+                        <span>الدخول للنظام</span>
+                        <i class="fas fa-arrow-left transform group-hover:-translate-x-2 transition-transform"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Card 3: Smart Reports (BI) -->
+            <a href="https://bi.momglob.com/" target="_blank" rel="noopener noreferrer" class="group">
+                <div class="portal-card glass-card rounded-2xl p-8 h-full flex flex-col justify-between border-t-4 border-t-gold-dark shadow-md relative overflow-hidden">
+                    <div class="absolute -top-10 -left-10 w-24 h-24 bg-gold/10 rounded-full group-hover:scale-150 transition-transform duration-500"></div>
+
+                    <div>
+                        <!-- Icon -->
+                        <div class="icon-box w-16 h-16 rounded-2xl bg-gold/15 text-maroon flex items-center justify-center text-3xl mb-6 shadow-sm transition-all duration-300">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+
+                        <!-- Card Header -->
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-xl font-bold text-maroon-dark group-hover:text-maroon transition-colors">
+                                التقارير الذكية
+                            </h3>
+                            <span class="text-[11px] bg-yellow-100 text-yellow-900 font-bold px-2.5 py-1 rounded-full border border-yellow-300">
+                                ذكاء الأعمال (BI)
+                            </span>
+                        </div>
+
+                        <!-- Description -->
+                        <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-6">
+                            لوحة المؤشرات الذكية والبيانات الإحصائية لدعم اتخاذ القرار وتتبع خطط الإنتاج في قطاع التعدين.
+                        </p>
+                    </div>
+
+                    <!-- Footer Link -->
+                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs sm:text-sm font-bold text-maroon group-hover:text-gold-dark transition-colors">
+                        <span>استعراض التقارير</span>
+                        <i class="fas fa-arrow-left transform group-hover:-translate-x-2 transition-transform"></i>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- Help Banner -->
+        <div class="mt-14 bg-gradient-to-r from-maroon-soft via-white to-maroon-soft rounded-2xl p-6 border border-gold/40 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-right">
+            <div class="flex items-center space-x-4 space-x-reverse">
+                <div class="w-12 h-12 rounded-full bg-maroon text-gold flex items-center justify-center text-xl shrink-0">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-maroon-dark text-sm sm:text-base">الدعم الفني والخدمات الرقمية</h4>
+                    <p class="text-xs text-gray-600">للمساعدة أو الاستفسار المباشر، يُمكنكم التواصل مع مركز المعلومات والتحول الرقمي</p>
+                </div>
+            </div>
+            <a href="mailto:support@momglob.com" class="bg-maroon hover:bg-maroon-dark text-white text-xs font-bold px-6 py-3 rounded-xl transition-all shadow hover:shadow-md flex items-center space-x-2 space-x-reverse whitespace-nowrap">
+                <i class="fas fa-envelope"></i>
+                <span>التواصل مع مركز المعلومات</span>
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-maroon-dark text-white border-t-4 border-gold mt-auto">
+        <div class="max-w-7xl mx-auto px-4 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6 text-center md:text-right">
+                
+                <div>
+                    <div class="flex items-center justify-center md:justify-start space-x-2 space-x-reverse mb-3">
+                        <span class="text-gold font-bold text-base">جمهورية السودان - وزارة المعادن السودانية</span>
+                    </div>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        الجهة الحكومية الاتحادية المختصة بالتخطيط والتنظيم والإشراف على قطاع الثروة المعدنية والتعدين.
+                    </p>
+                </div>
+
+                <div>
+                    <h5 class="text-gold font-bold mb-3 text-sm border-b border-white/10 pb-1 inline-block">الخدمات الإلكترونية</h5>
+                    <ul class="text-xs space-y-2 text-gray-300">
+                        <li><a href="https://momglob.com:8001/" target="_blank" class="hover:text-gold transition-colors"><i class="fas fa-angle-left ml-1 text-gold"></i> أسعار الذهب</a></li>
+                        <li><a href="http://techcommittee.momglob.com/app/admin/" target="_blank" class="hover:text-gold transition-colors"><i class="fas fa-angle-left ml-1 text-gold"></i> نظام اللجنة الفنية</a></li>
+                        <li><a href="https://bi.momglob.com/" target="_blank" class="hover:text-gold transition-colors"><i class="fas fa-angle-left ml-1 text-gold"></i> التقارير الذكية</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-gold font-bold mb-3 text-sm border-b border-white/10 pb-1 inline-block">الأمان والخصوصية</h5>
+                    <p class="text-xs text-gray-300 leading-relaxed mb-2">
+                        جميع البيانات المتاحة خاضعة لمعايير الحماية والأمان الخاصة بإدارة تكنولوجيا المعلومات والاتصالات.
+                    </p>
+                    <span class="inline-block text-[10px] bg-white/10 text-gold px-2.5 py-1 rounded-full border border-gold/30">
+                        <i class="fas fa-lock ml-1"></i> الاتصال مشفر ومؤمن بالكامل
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="border-t border-white/10 pt-5 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-3">
+                <p>جميع الحقوق محفوظة &copy; <span id="year"></span> - جمهورية السودان - وزارة المعادن السودانية</p>
+                <div class="flex space-x-4 space-x-reverse">
+                    <span>مركز المعلومات</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Live Date Display
+            const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const today = new Date().toLocaleDateString('ar-SD', dateOptions);
+            document.getElementById('current-date').innerHTML = `<i class="far fa-calendar-alt ml-1 text-gold"></i> ${today}`;
+
+            // Copyright Year
+            document.getElementById('year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>
