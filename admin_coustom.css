@@ -1,31 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap');
 
 :root {
-    --primary: #3d1c14; 
-    --primary: #3d1c14; 
-    --primary: #3d1c14; 
-    --primary: #3d1c14; 
-    --primary: #3d1c14; 
-    --primary-fg: #ffffff;
-    --accent: #2094f3; 
-    --secondary: #f4d03f; 
+    --primary: #3d1c14;
+    --accent: #2094f3;
+    --secondary: #f4d03f;
     --body-bg: #f4f6f9;
-    --body-quiet-color: #495057;
-    --header-bg: #3d1c14;
-    --header-color: #ffffff;
-    --header-link-color: #2094f3;
-    --darkened-bg: #2b130e;
-    --breadcrumbs-bg: #2094f3;
-    --breadcrumbs-link-fg: #ffffff;
-    --breadcrumbs-fg: #ffffff;
-    --link-fg: #3d1c14;
-    --link-hover-color: #2094f3;
-    --link-selected-fg: #f4d03f;
     --border-radius: 8px;
 }
 
 
-body, input, select, textarea, button, .module, h1, h2, h3, h4, th, td, a {
+body, input, select, textarea, button, .module, h1, h2, h3, h4, th, td, a, label {
     font-family: 'Cairo', sans-serif !important;
 }
 
@@ -35,33 +19,45 @@ body {
 }
 
 
-@media (prefers-color-scheme: dark), body.dark-mode, .theme-dark {
-    :root {
-        --body-bg: #121212 !important;
-        --body-quiet-color: #e0e0e0 !important;
-    }
+@media (prefers-color-scheme: dark), body.dark-mode, .theme-dark, .dark-theme {
     body {
         background-color: #121212 !important;
         color: #ffffff !important;
     }
-    .module {
+    
+    .module, div.module {
         background: #1e1e1e !important;
         border: 1px solid #333333 !important;
     }
-    #result_list tr {
+
+    /* نصوص القوائم الجانبية والجداول في الوضع الليلي */
+    .module table tr, #result_list tr {
         background-color: #1e1e1e !important;
         color: #ffffff !important;
     }
-    #result_list td {
+
+    .module table th a, .module table td a, #result_list td a {
+        color: #f4d03f !important;
+        font-weight: 700 !important;
+    }
+
+    .module table td, #result_list td, #result_list th {
         color: #ffffff !important;
         border-bottom: 1px solid #333333 !important;
     }
-    #result_list tr:nth-child(even) {
-        background-color: #252525 !important;
+
+    
+    input[type="text"], input[type="password"], input[type="email"], input[type="number"], select, textarea {
+        background-color: #2b2b2b !important;
+        color: #ffffff !important;
+        border: 2px solid #2094f3 !important;
+        border-radius: 6px !important;
+        padding: 8px !important;
     }
-    #result_list tr:hover, #result_list tr:hover td {
-        background-color: #33271a !important;
+
+    label, .form-row label {
         color: #f4d03f !important;
+        font-weight: 700 !important;
     }
 }
 
@@ -70,7 +66,6 @@ body {
     background: linear-gradient(135deg, #3d1c14 0%, #2b130e 100%) !important;
     color: #ffffff !important;
     padding: 15px 25px !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
     border-bottom: 3px solid #2094f3 !important;
 }
 
@@ -100,30 +95,6 @@ div.breadcrumbs a {
 }
 
 
-#changelist-filter {
-    background-color: #3d1c14 !important;
-    border-radius: 8px !important;
-    padding: 10px !important;
-    color: #ffffff !important;
-}
-
-#changelist-filter h2, #changelist-filter h3 {
-    color: #f4d03f !important;
-    font-weight: 800 !important;
-}
-
-#changelist-filter a, #changelist-filter li {
-    color: #ffffff !important;
-    font-weight: 600 !important;
-    font-size: 14px !important;
-}
-
-#changelist-filter a:hover, #changelist-filter li.selected a {
-    color: #f4d03f !important;
-    font-weight: 800 !important;
-}
-
-
 .module {
     border-radius: var(--border-radius) !important;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
@@ -146,25 +117,10 @@ div.breadcrumbs a {
     background-color: #3d1c14 !important;
     color: #ffffff !important;
     font-weight: 700 !important;
-    font-size: 14px !important;
-}
-
-#result_list th a {
-    color: #2094f3 !important;
-}
-
-#result_list tr {
-    background-color: #ffffff !important;
-    color: #111111 !important;
-}
-
-#result_list tr:nth-child(even) {
-    background-color: #f8f9fa !important;
 }
 
 #result_list td {
     color: #111111 !important;
-    font-size: 14px !important;
     font-weight: 600 !important;
     border-bottom: 1px solid #e0e0e0 !important;
 }
@@ -172,11 +128,6 @@ div.breadcrumbs a {
 #result_list td a {
     color: #3d1c14 !important;
     font-weight: 700 !important;
-}
-
-#result_list tr:hover, #result_list tr:hover td {
-    background-color: #e3f2fd !important;
-    color: #000000 !important;
 }
 
 
@@ -193,64 +144,4 @@ div.breadcrumbs a {
 .button:hover, input[type=submit]:hover {
     background: #2094f3 !important;
     color: #ffffff !important;
-}
-
-
-body.login {
-    background: linear-gradient(135deg, #1a0b08 0%, #0d0504 100%) !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
-
-body.login #container {
-    background: #3d1c14 !important;
-    border: 2px solid #2094f3 !important;
-    border-radius: 16px !important;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.5) !important;
-    padding: 30px !important;
-    width: 420px !important;
-}
-
-body.login #header {
-    background: transparent !important;
-    border: none !important;
-    text-align: center;
-    padding: 0 0 20px 0 !important;
-}
-
-body.login .form-row label {
-    color: #2094f3 !important;
-    font-weight: 700 !important;
-    font-size: 15px !important;
-    display: block;
-    margin-bottom: 6px;
-}
-
-body.login input[type="text"], 
-body.login input[type="password"] {
-    background: #ffffff !important;
-    border: 2px solid #2094f3 !important;
-    border-radius: 8px !important;
-    padding: 12px !important;
-    width: 100% !important;
-    color: #000000 !important;
-    font-size: 16px !important;
-    font-weight: 600 !important;
-}
-
-body.login .submit-row input {
-    background: #2094f3 !important;
-    color: #ffffff !important;
-    width: 100% !important;
-    font-size: 16px !important;
-    font-weight: 800 !important;
-    padding: 12px !important;
-    border-radius: 8px !important;
-}
-
-body.login .submit-row input:hover {
-    background: #ffffff !important;
-    color: #3d1c14 !important;
 }
