@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
 
 :root {
     --primary: #3d1c14;
@@ -22,114 +22,97 @@ input[type="password"],
 input[type="email"], 
 input[type="number"], 
 select, 
-textarea,
-.select2-container--default .select2-selection--single {
+textarea {
     background-color: #ffffff !important;
     color: #000000 !important;
-    border: 2px solid #3d1c14 !important;
+    border: 1.5px solid #3d1c14 !important;
     border-radius: 6px !important;
-    padding: 8px 12px !important;
-    font-size: 15px !important;
-    font-weight: 700 !important;
-    min-height: 40px !important;
-    height: auto !important;
+    padding: 6px 10px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    height: 38px !important;
     box-sizing: border-box !important;
-    outline: none !important;
-}
-
-input:focus, select:focus, textarea:focus {
-    border-color: #2094f3 !important;
-    box-shadow: 0 0 6px rgba(32, 148, 243, 0.5) !important;
 }
 
 select option {
     background-color: #ffffff !important;
     color: #000000 !important;
+    font-size: 14px !important;
+}
+
+
+.module table td a, .app-applications table td a {
+    color: #d4af37 !important; 
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important; 
+    text-decoration: none !important;
+}
+
+.module table td a:hover {
+    color: #ffffff !important;
+}
+
+
+.module h2, .inline-group h2, #changelist-filter h2, #changelist-filter h3 {
     font-size: 15px !important;
     font-weight: 700 !important;
-    padding: 10px !important;
 }
 
 
-label, .form-row label, .required label, .changelist-filter h3, th a {
-    color: #f4d03f !important;
-    font-weight: 800 !important;
-    font-size: 15px !important;
-    
-    text-shadow: 
-        -1px -1px 0 #000,  
-         1px -1px 0 #000,
-        -1px  1px 0 #000,
-         1px  1px 0 #000,
-         0px  2px 4px rgba(0, 0, 0, 0.8) !important;
-}
-
-
-.module .form-row label {
-    color: #3d1c14 !important;
-    text-shadow: none !important;
-}
-
-
-.module, div.module {
+.module {
     background: #ffffff !important;
     border-radius: 8px !important;
-    overflow: hidden !important;
     border: 1px solid #ccc !important;
-}
-
-#result_list table {
-    width: 100% !important;
-    background-color: #ffffff !important;
+    overflow: hidden !important;
+    margin-bottom: 20px !important;
 }
 
 #result_list th {
     background-color: #3d1c14 !important;
     color: #ffffff !important;
-    font-size: 14px !important;
-    font-weight: 800 !important;
-    padding: 12px 10px !important;
-}
-
-
-#result_list td, #result_list td a, #result_list tr td {
-    color: #000000 !important;
-    font-size: 14px !important;
+    font-size: 13px !important;
     font-weight: 700 !important;
-    border-bottom: 1px solid #e0e0e0 !important;
+    padding: 10px !important;
 }
 
-
-#result_list tr.row1, #result_list tr.row2, #result_list tr {
-    background-color: #ffffff !important;
+#result_list td, #result_list td a {
+    color: #000000 !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
 }
 
 #result_list tr:nth-child(even) {
     background-color: #f8f9fa !important;
 }
 
-#result_list tr:hover, #result_list tr:hover td, #result_list tr:hover td a {
+#result_list tr:hover, #result_list tr:hover td {
     background-color: #e3f2fd !important;
-    color: #000000 !important;
 }
 
 
 #header {
     background: linear-gradient(135deg, #3d1c14 0%, #2b130e 100%) !important;
     border-bottom: 3px solid #2094f3 !important;
+    padding: 12px 20px !important;
 }
 
 #header h1, #header h1 a {
+    font-size: 18px !important;
+    font-weight: 800 !important;
     color: #ffffff !important;
-    font-weight: 900 !important;
 }
 
-div.breadcrumbs {
-    background: #2094f3 !important;
+.button, input[type=submit], .submit-row input {
+    background: #3d1c14 !important;
     color: #ffffff !important;
+    border-radius: 6px !important;
+    padding: 8px 16px !important;
+    font-size: 14px !important;
     font-weight: 700 !important;
+    cursor: pointer !important;
 }
 
-div.breadcrumbs a {
-    color: #ffffff !important;
+.button:hover, input[type=submit]:hover {
+    background: #2094f3 !important;
 }
