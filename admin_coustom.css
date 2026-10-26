@@ -3,11 +3,9 @@
 :root {
     --primary: #3d1c14;
     --accent: #2094f3;
-    --secondary: #f4d03f;
-    --body-bg: #f4f6f9;
-    --border-radius: 8px;
+    --secondary: #d4af37;
+    --body-bg: #121212;
 }
-
 
 body, input, select, textarea, button, .module, h1, h2, h3, h4, th, td, a, label {
     font-family: 'Cairo', sans-serif !important;
@@ -15,133 +13,123 @@ body, input, select, textarea, button, .module, h1, h2, h3, h4, th, td, a, label
 
 body {
     background-color: var(--body-bg) !important;
-    color: #111111 !important;
-}
-
-
-@media (prefers-color-scheme: dark), body.dark-mode, .theme-dark, .dark-theme {
-    body {
-        background-color: #121212 !important;
-        color: #ffffff !important;
-    }
-    
-    .module, div.module {
-        background: #1e1e1e !important;
-        border: 1px solid #333333 !important;
-    }
-
-    /* نصوص القوائم الجانبية والجداول في الوضع الليلي */
-    .module table tr, #result_list tr {
-        background-color: #1e1e1e !important;
-        color: #ffffff !important;
-    }
-
-    .module table th a, .module table td a, #result_list td a {
-        color: #f4d03f !important;
-        font-weight: 700 !important;
-    }
-
-    .module table td, #result_list td, #result_list th {
-        color: #ffffff !important;
-        border-bottom: 1px solid #333333 !important;
-    }
-
-    
-    input[type="text"], input[type="password"], input[type="email"], input[type="number"], select, textarea {
-        background-color: #2b2b2b !important;
-        color: #ffffff !important;
-        border: 2px solid #2094f3 !important;
-        border-radius: 6px !important;
-        padding: 8px !important;
-    }
-
-    label, .form-row label {
-        color: #f4d03f !important;
-        font-weight: 700 !important;
-    }
-}
-
-
-#header {
-    background: linear-gradient(135deg, #3d1c14 0%, #2b130e 100%) !important;
-    color: #ffffff !important;
-    padding: 15px 25px !important;
-    border-bottom: 3px solid #2094f3 !important;
-}
-
-#header #branding h1 {
-    font-weight: 900 !important;
-    font-size: 20px !important;
     color: #ffffff !important;
 }
 
-#header a:link, #header a:visited {
-    color: #2094f3 !important;
-    font-weight: 600;
-}
 
-div.breadcrumbs {
-    background: #2094f3 !important;
-    color: #ffffff !important;
-    padding: 12px 25px !important;
-    font-size: 14px !important;
-    font-weight: 600 !important;
-    border-bottom: 2px solid #3d1c14 !important;
-}
-
-div.breadcrumbs a {
-    color: #ffffff !important;
-    text-decoration: underline !important;
-}
-
-
-.module {
-    border-radius: var(--border-radius) !important;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
-    border: 1px solid #e2e8f0 !important;
-    background: #ffffff !important;
-    overflow: hidden !important;
-    margin-bottom: 25px !important;
-}
-
-.module h2, .inline-group h2 {
-    background: #3d1c14 !important;
-    color: #ffffff !important;
-    font-size: 16px !important;
+input[type="text"], 
+input[type="password"], 
+input[type="email"], 
+input[type="number"], 
+select, 
+textarea,
+.select2-container--default .select2-selection--single {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 2px solid #3d1c14 !important;
+    border-radius: 6px !important;
+    padding: 8px 12px !important;
+    font-size: 15px !important;
     font-weight: 700 !important;
-    padding: 12px 18px !important;
-    border-bottom: 2px solid #2094f3 !important;
+    min-height: 40px !important;
+    height: auto !important;
+    box-sizing: border-box !important;
+    outline: none !important;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #2094f3 !important;
+    box-shadow: 0 0 6px rgba(32, 148, 243, 0.5) !important;
+}
+
+select option {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    padding: 10px !important;
+}
+
+
+label, .form-row label, .required label, .changelist-filter h3, th a {
+    color: #f4d03f !important;
+    font-weight: 800 !important;
+    font-size: 15px !important;
+    
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000,
+         0px  2px 4px rgba(0, 0, 0, 0.8) !important;
+}
+
+
+.module .form-row label {
+    color: #3d1c14 !important;
+    text-shadow: none !important;
+}
+
+
+.module, div.module {
+    background: #ffffff !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    border: 1px solid #ccc !important;
+}
+
+#result_list table {
+    width: 100% !important;
+    background-color: #ffffff !important;
 }
 
 #result_list th {
     background-color: #3d1c14 !important;
     color: #ffffff !important;
-    font-weight: 700 !important;
+    font-size: 14px !important;
+    font-weight: 800 !important;
+    padding: 12px 10px !important;
 }
 
-#result_list td {
-    color: #111111 !important;
-    font-weight: 600 !important;
+
+#result_list td, #result_list td a, #result_list tr td {
+    color: #000000 !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
     border-bottom: 1px solid #e0e0e0 !important;
 }
 
-#result_list td a {
-    color: #3d1c14 !important;
-    font-weight: 700 !important;
+
+#result_list tr.row1, #result_list tr.row2, #result_list tr {
+    background-color: #ffffff !important;
+}
+
+#result_list tr:nth-child(even) {
+    background-color: #f8f9fa !important;
+}
+
+#result_list tr:hover, #result_list tr:hover td, #result_list tr:hover td a {
+    background-color: #e3f2fd !important;
+    color: #000000 !important;
 }
 
 
-.button, input[type=submit], .submit-row input {
-    background: #3d1c14 !important;
+#header {
+    background: linear-gradient(135deg, #3d1c14 0%, #2b130e 100%) !important;
+    border-bottom: 3px solid #2094f3 !important;
+}
+
+#header h1, #header h1 a {
     color: #ffffff !important;
-    border: none !important;
-    border-radius: 6px !important;
-    padding: 10px 20px !important;
-    font-weight: 700 !important;
-    cursor: pointer !important;
+    font-weight: 900 !important;
 }
 
-.button:hover, input[type=submit]:hover {
+div.breadcrumbs {
     background: #2094f3 !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+div.breadcrumbs a {
     color: #ffffff !important;
 }
